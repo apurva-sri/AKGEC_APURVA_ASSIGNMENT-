@@ -6,14 +6,28 @@ import "../styles/navbar.css";
 function Navbar() {
   const { cart } = useCart();
 
-  const totalItems = cart.reduce((total, item) => total + item.quantity, 0); //showing the total quantity of items, not the number of unique products
-  return (
-    <nav>
-      <h2>E-Commerce</h2>
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
-      <div>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/cart">Cart ({totalItems})</NavLink>
+  return (
+    <nav className="navbar">
+      <div className="logo">🛒 ShopEase</div>
+
+      <ul className="nav-links">
+        <li>
+          <NavLink to="/">Home</NavLink>
+        </li>
+
+        <li>
+          <NavLink to="/">Products</NavLink>
+        </li>
+
+        <li>
+          <NavLink to="/cart">Cart ({totalItems})</NavLink>
+        </li>
+      </ul>
+
+      <div className="search-box">
+        <input type="text" placeholder="Search Products..." />
       </div>
     </nav>
   );

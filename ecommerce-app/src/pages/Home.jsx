@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 
 import ProductCard from "../components/ProductCard";
 import { getAllProducts } from "../services/api";
+
+import Hero from "../components/Hero/Hero";
+
 import "../styles/home.css";
 
 function Home() {
@@ -36,11 +39,14 @@ function Home() {
   }
 
   return (
-    <div className="products-container">
+    <>
+      <Hero />
+      <div className="products-container">
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
-    </div>
+      </div>
+    </>
   );
 }
 
