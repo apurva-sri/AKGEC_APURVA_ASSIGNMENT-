@@ -1,0 +1,49 @@
+.product-details {
+  display: flex;
+  gap: 40px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.product-image {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.product-content {
+  flex: 1;
+}
+
+.product-content h1 {
+  margin-bottom: 15px;
+}
+
+.product-content p {
+  margin: 12px 0;
+}
+
+.price {
+  color: green;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.rating {
+  color: orange;
+}
+
+.category {
+  text-transform: capitalize;
+}
+
+.add-cart-btn {
+  margin-top: 25px;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  background: black;
+  color: white;
+  border-radius: 6px;
+}
