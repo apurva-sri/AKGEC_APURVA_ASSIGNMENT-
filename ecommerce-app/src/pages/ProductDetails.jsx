@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
 import { getProductById } from "../services/api";
 
@@ -7,7 +8,7 @@ import "../styles/productDetails.css";
 
 function ProductDetails() {
   const { id } = useParams();
-
+  const { addToCart } = useCart();
   const [product, setProduct] = useState(null);
 
   const [loading, setLoading] = useState(true);
@@ -61,7 +62,9 @@ function ProductDetails() {
 
         <h2 className="price">${product.price}</h2>
 
-        <button className="add-cart-btn">Add To Cart</button>
+        <button className="add-cart-btn" onClick={() => addToCart(product)}>
+          Add To Cart
+        </button>
       </div>
     </div>
   );
